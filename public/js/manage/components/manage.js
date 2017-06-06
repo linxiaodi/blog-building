@@ -16,7 +16,6 @@
     }
     componentDidMount(){
        blogListApi().then(blogList=>{
-            blogList = blogList.splice(1,2)
             this.setState({blogList})
         })
     }

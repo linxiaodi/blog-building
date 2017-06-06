@@ -18,7 +18,7 @@ class ListPanel extends Component{
     }
     componentDidMount(){
         blogListApi().then(blogList=>{
-            blogList = blogList.splice(1,2).reverse()
+            blogList = blogList.reverse()
             this.setState({blogList})
         })
         this.setState(this.state)
