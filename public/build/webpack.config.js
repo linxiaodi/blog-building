@@ -17,7 +17,11 @@ module.exports =  {
             list:'./js/list/index.js',
             manage:'./js/manage/index.js',
             detail:'./js/detail/index.js',
-            common:'common'
+            common:[
+                'common',
+                'react',
+                "react-dom"
+            ]
         },
         // debug: true,
         devtool: 'source-map',
