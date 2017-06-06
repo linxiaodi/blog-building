@@ -1,3 +1,4 @@
+// webpack 插件配置
 const path = require('path'),
     webpack = require("webpack"),
     CopyWebpackPlugin = require('copy-webpack-plugin'),

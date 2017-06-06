@@ -5,10 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="/dist/index.css">
+    <meta name="keywords" content="wicklin,HTML,CSS,JavaScript,前端,个人博客" />
+    <meta name='author' content="wicklin" />
+    <meta name='description' content='个人博客,wicklin,前端,nodejs'/>
+    <title>Wicklin Blog</title>
     <link rel="stylesheet" href="/dist/common.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_5hnqr4h9y54b1emi.css">
+    <link rel="stylesheet" href="/dist/<%- viewName%>.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_h1x6m1i6dzql4n29.css"/>
+    <script src='/dist/common.js'></script>
 </head>
 
 <body>
@@ -18,8 +23,18 @@
             <ul class="tab">
                 <li><a class="lll" href="/">主页</a></li>
                 <li><a href="/about">关于</a></li>
-                <li><a href="/write">文章</a></li>
+                <% if(hasUser){ %>
+                    <li><a href="/manage">管理博客</a></li>
+                <% } %>
                 <li><a href="/list">列表</a></li>
             </ul>
         </div>
     </div>
+<script type="text/javascript">
+    Object.defineProperty(window, 'hasUser', {
+        configurable:false,
+        enumerable:false,
+        value:<%- hasUser%>,
+        writable:false
+    })
+</script>

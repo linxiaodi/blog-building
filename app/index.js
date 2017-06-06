@@ -30,6 +30,7 @@ class APP {
                 },
                 res : response,
                 resCtx : {
+                    hasUser:false,
                     statusCode:200,
                     statusMsg:'resolved ok',
                     header : {'X-powered-by': 'Node.js'}, //返回头

@@ -1,352 +1,92 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @lwk520
- Sign out
- Watch 7
-  Star 11
- Fork 2 slashhuang/pure-node-notebook-step
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathpure-node-notebook-step/public/css/reset.css
-57fbf71  9 days ago
-@slashhuang slashhuang update babel
-1 contributor
-RawBlameHistory     
-337 lines (274 sloc)  4.72 KB
-html, body {
-    color: #212121;
-    background: #f2f2f2;
-    height: 100%;
-}
+body, ul, li {
+  padding: 0;
+  margin: 0; }
 
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, form, th, td {
-    margin: 0;
-    padding: 0;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-}
+body {
+  background-color: #efefef; }
 
-h1, h2, h3, h4, h5, h6{
-    font-weight: normal;
-}
+.header-center ul, .header-center li {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
 
-body, button, input, select, textarea {
-    font: 14px/1.5 "helvetica", "arial","Pingfang",'PingFang SC', "Hiragino Sans GB", "Microsoft Yahei", "STHeiti", "sans-serif";
-}
-
-/*
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-    font-weight: normal;
-}
-h2 {
-    font-size: 20px;
-    height: 40px;
-    line-height: 40px
-}
-h3 {
-    font-size: 18px;
-    font-weight: bold;
-    height: 60px;
-    line-height: 60px;
-    clear: both;
-    position: relative
-}
-h4 {
-    font-size: 16px;
-    height: 32px;
-    line-height: 32px
-}*/
-
-address, cite, dfn, em, var {
-    font-style: normal;
-}
-
-code, kbd, pre, samp, tt {
-    font-family: "Courier New", Courier, monospace;
-}
-
-small {
-    font-size: 12px;
-}
-
-ul, ol,li {
-    list-style: none;
-}
-
-/* HTML5 display definitions
-   ========================================================================== */
-
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-    display: block;
-}
-
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-
-audio,
-canvas,
-progress,
-video {
-    display: inline-block; /* 1 */
-    vertical-align: baseline; /* 2 */
-}
-
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}
-
-i {
-    font-style: normal;
-}
+.bor {
+  border: 1px solid #aaa; }
 
 a {
-    text-decoration: none;
-    cursor: pointer;
-    color: #212121;
-    outline: 0 none;
-}
+  text-decoration: none; }
 
-a:hover {
-    text-decoration: underline;
-}
+#header {
+  position: relative;
+  height: 80px;
+  background: url("/img/header-bg.png") 0px 0 no-repeat;
+  background-size: cover;
+  color: #fff; }
+  #header .header-center {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 1104px;
+    margin: 0 auto;
+    text-align: center; }
+    #header .header-center .head-portrait {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto; }
+      #header .header-center .head-portrait > img {
+        border: 4px solid #fff;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%; }
+    #header .header-center .tab {
+      display: flex;
+      width: 60%;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: stretch;
+      line-height: 80px; }
+      #header .header-center .tab > li {
+        flex-grow: 1; }
+      #header .header-center .tab li > a {
+        color: #fff;
+        font-size: 18px; }
+        #header .header-center .tab li > a:hover {
+          transition: 0.4s;
+          text-decoration: none;
+          color: #f9bf3b; }
+    @media (max-width: 800px) {
+      #header .header-center .tab {
+        flex-direction: column;
+        line-height: normal; } }
+  @media (max-width: 1104px) {
+    #header .header-center {
+      width: 100%; }
+      #header .header-center .tab {
+        width: 80%; } }
 
-a:focus, input:focus {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    outline: none;
-}
+#footer {
+  height: 50px;
+  background: url("/img/header-bg.png") center no-repeat;
+  background-size: cover; }
+  #footer .link {
+    width: 1104px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #footer .link a {
+      display: block;
+      color: #fff;
+      font-size: 30px;
+      margin-left: 40px; }
+      #footer .link a:nth-child(2) {
+        position: relative;
+        top: -3px; }
+      #footer .link a:hover {
+        text-decoration: none;
+        transition: 0.4s;
+        color: #f9bf3b; }
 
-input:hover {
-    /*border-width: 1px;*/
-}
-
-abbr[title], acronym[title] {
-    border-bottom: 1px dotted;
-    cursor: help;
-}
-
-q:before, q:after {
-    content: '';
-}
-
-legend {
-    color: #000;
-}
-
-fieldset, img {
-    border: none;
-}
-
-button, input, select, textarea, label {
-    font-size: 100%;
-    vertical-align: middle;
-    outline: 0;
-}
-
-textarea {
-    resize: none !important;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-}
-
-table th {
-    text-align: left;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    *color: #fff;
-}
-
-img {
-    -ms-interpolation-mode: bicubic;
-    border: 0;
-    outline: none;
-}
-div {
-    outline: none;
-}
-
-.t-l {
-    text-align: left;
-}
-
-.t-r {
-    text-align: right;
-}
-
-.t-c {
-    text-align: center;
-}
-
-.f-l {
-    float: left;
-}
-
-.f-r {
-    float: right;
-}
-
-.p-a {
-    position: absolute;
-}
-
-.p-r {
-    position: relative;
-}
-
-.i-b {
-    display: inline-block;
-}
-
-.c-b {
-    clear: both;
-}
-
-.v-middle {
-    vertical-align: middle;
-}
-
-.clearfix {
-    zoom: 1;
-}
-
-.clearfix:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-}
-
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
-
-.visible {
-    visibility: visible;
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-.bf,
-.bold {
-    font-weight: bold;
-}
-
-.color-gray {
-    color: #bdbdbd;
-}
-
-input[type] {
-    outline: none;
-    border: 1px solid #ccc;
-}
-
-input[type="button"],
-input[type="submit"] {
-    border: 0 none;
-}
-
-::-webkit-input-placeholder {
-    /* WebKit browsers */
-    color: #bdbdbd;
-}
-
-:-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: #bdbdbd;
-}
-
-::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: #bdbdbd;
-}
-
-:-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-    color: #bdbdbd;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-.input-focus {
-    transition: border-color .3s;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-.input-focus {
-    /*border-color: #686e71 !important;*/
-}
-
-button, .Btn {
-    border: 0;
-    /*background-color: #e84a01;*/
-  /*  width: 120px;
-    height: 32px;
-    line-height: 32px;*/
-    /*color: #fff;*/
-    /*border-radius: 2px;*/
-    cursor: pointer;
-    text-align: center;
-    display: inline-block
-}
-
-button:active, .Btn:active {
-    /*background-color: #cb4000;*/
-}
-
-button:hover, .Btn:hover {
-    background-color: #f16d2f;
-    text-decoration: none
-}
-
-button[disabled], .Btn[disabled] {
-    background-color: #d3d5d9;
-    cursor: default;
-    color: #fff;
-    border: 0;
-}
 /*# sourceMappingURL=common.css.map*/

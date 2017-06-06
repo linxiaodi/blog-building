@@ -1,3 +1,3 @@
 module.exports = {
-    reset:'css/reset.css'
+    common:'css/index.scss'
 };

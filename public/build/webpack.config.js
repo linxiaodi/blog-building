@@ -12,11 +12,12 @@ var  AddResolve = (obj)=>{
 module.exports =  {
         watch: true,
         entry: {
-            index:'./js/index.js',
-            common: [
-                'jquery',
-                "reset"
-            ]
+            index:'./js/index/index.js',
+            about:'./js/about/index.js',
+            list:'./js/list/index.js',
+            manage:'./js/manage/index.js',
+            detail:'./js/detail/index.js',
+            common:'common'
         },
         // debug: true,
         devtool: 'source-map',

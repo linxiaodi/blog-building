@@ -1,9 +1,25 @@
+$large:1104px;
+$middle:800px;
+body,ul,li{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #efefef;
+}
+.header-center ul,.header-center li{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 .bor {
     border: 1px solid #aaa;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 #header {
     position: relative;
     height: 80px;
@@ -20,13 +36,13 @@ a{
         .head-portrait {
             display: flex;
             align-items: center;
-            flex: 1;
+            justify-content: center;
+            margin: auto;
             >img {
                 border: 4px solid #fff;
                 width: 68px;
                 height: 68px;
                 border-radius: 50%;
-                margin-left: 100px;
             }
         }
         .tab {
@@ -42,39 +58,54 @@ a{
             li>a {
                 color: #fff;
                 font-size: 18px;
-                &:hover{
+                &:hover {
                     transition: 0.4s;
                     text-decoration: none;
-                    color:#f9bf3b;
+                    color: #f9bf3b;
                 }
+            }
+        }
+        @media (max-width:$middle) {
+            .tab {
+                flex-direction: column;
+                line-height: normal;
+            }
+        }
+    }
+    @media (max-width:$large) {
+        .header-center {
+            width: 100%;
+            .tab {
+                width: 80%;
             }
         }
     }
 }
-#footer{
-    height:50px;
+
+#footer {
+    height: 50px;
     background: url('/img/header-bg.png') center no-repeat;
     background-size: cover;
-    .link{
+    .link {
         width: 1104px;
         height: 100%;
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        align-items:center;
-        a{
+        align-items: center;
+        a {
             display: block;
             color: #fff;
             font-size: 30px;
             margin-left: 40px;
-            &:nth-child(2){
-                position:relative;
-                top:-3px;
+            &:nth-child(2) {
+                position: relative;
+                top: -3px;
             }
-            &:hover{
+            &:hover {
                 text-decoration: none;
-                transition:0.4s;
-                color:#f9bf3b;
+                transition: 0.4s;
+                color: #f9bf3b;
             }
         }
     }

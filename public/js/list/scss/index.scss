@@ -1,0 +1,49 @@
+@import '../../detail/scss/index.scss';
+body{
+    background-color: #efefef;
+}
+.spinner{
+    text-align: center;
+    width: 100%;
+    padding-top:40px;
+    font-size:16px;
+    .ant-spin-dot{
+         margin:auto
+    }
+}
+
+.container{
+    .blog-detail{
+       margin:20px auto;
+       padding:1.5em 4%;
+    }
+}
+.list{
+    float: right;
+    width: 200px;
+    font-size:16px;
+    margin-right: 150px;
+    a{
+        color:#108ee9;
+        &:hover{
+            color:#ed4259;
+            text-decoration: underline;
+        }
+    }
+    h3{
+        line-height: 2.5em;
+        border-bottom: 1px solid #666666;
+    }
+    ul{
+        margin-top: 10px;
+        li{
+            padding: 4px 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    }
+}
+@media (min-width:0px) and (max-width:1200px){
+    .list{
+        margin:0;
+    }
+}

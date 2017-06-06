@@ -1,39 +1,23 @@
-let msg = {
-    '/user.action': {
-        name: 'lwk',
-        age: 22
-    },
-    '/get.action': {
-        car: 'BMW',
-        price: '200w'
-    }
-}
-
+let Router = require('./ajax')
 
 module.exports = (ctx) => {
-    let { reqCtx,req,resCtx,res } = ctx;
-    let {url,method} = req;
-    let data = [];
-
-    if(!url.match('.action')) return Promise.resolve();
-    
-    resCtx.header = Object.assign(resCtx.header,{'Content-Type':'application/json'})
-
-    if (method.toLowerCase() === 'get') {
-        resCtx.body = JSON.stringify(msg[url])
-        return Promise.resolve()
-    } else {
-        return new Promise((resolve, reject) => {
-            req.on('data', (chunk) => {
-                // data+=chunk 其实是buffer隐式转换成string后进行相加，这样会造成中文字符串的缺失
-                data.push(chunk);
-            }).on('end', () => {
-                data=Buffer.concat(data).toString()
-                reqCtx.body = JSON.parse(data);
-                //处理post的数据
-                resCtx.body = data;
-                resolve();
-            })
-        })
-    }
+    let {reqCtx,resCtx} = ctx;
+    let {pathname} = reqCtx;
+    return Promise.resolve({
+        then: (resolve, reject) => {
+            if (pathname.match('action')) {
+                return Router.routers(ctx).then(val => {
+                    resCtx.body = JSON.stringify(val)
+                    resCtx.header = Object.assign(resCtx.header, {
+                        'Content-Type': 'application/json'
+                    })
+                    resolve()
+                }).catch(err=>{
+                    resCtx.statusCode=400
+                    resCtx.body =`${err.name} + ${err.stack}`;
+                })
+            }
+            resolve();
+        }
+    })
 }

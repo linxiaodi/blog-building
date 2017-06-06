@@ -91,3 +91,12 @@
 .hljs-strong {
   font-weight: bold;
 }
+h1,h2,h3,h4,h5,h6{
+  font-weight: bold;
+}
+a{
+  font-weight: normal;
+}
+.mark-content-preview{
+  padding: 4px 7px;
+}

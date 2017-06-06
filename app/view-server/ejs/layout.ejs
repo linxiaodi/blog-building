@@ -1,6 +1,10 @@
 
-<%- include('./module/header.ejs') %>
 
-<%- include(templateName) %>
 
-<%- include('./module/footer.ejs') %>
+<%- include('./module/header')  %>
+<div class='main-module'>
+<!-- react逻辑塞进来 -->
+	<div id="mod-<%- viewName%>"></div>
+</div>
+<script src="/dist/<%- viewName %>.js"></script>
+<%- include('./module/footer')  %>
