@@ -1,3 +1,2 @@
-#! /bin/sh 
-mongod --dbpath ../data/blogdb
-
+#! /bin/sh     
+/e/Mongo/bin/mongod --dbpath /e/data/blogdb

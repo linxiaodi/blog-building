@@ -3,7 +3,7 @@ const path = require('path')
 const fs = require('fs')
 const mime = require('mime')
 
-let urlrewrite = require('./urlrewrite');
+let {blog,market} = require('./urlrewrite');
 /*
  *  HTML加载中间件 
  */
@@ -15,13 +15,13 @@ module.exports = (ctx) => {
     let {
         pathname
     } = ctx.reqCtx;
+    
     return Promise.resolve({
         then: (resolve, reject) => {
-            
             if (pathname.match('action') || pathname.match(/\./)) {
                 resolve()
             } else {
-                if (urlrewrite[pathname]) {
+                if (blog[pathname]) {
                     let basePath = path.resolve(__dirname, 'ejs');
                     let layoutPath = path.resolve(basePath, 'layout.ejs')
                     let layoutHtml = fs.readFileSync(layoutPath, 'utf8');
@@ -29,7 +29,7 @@ module.exports = (ctx) => {
                         filename: layoutPath
                     })
                     resCtx.body = render({
-                        viewName: urlrewrite[pathname],
+                        viewName: blog[pathname],
                         hasUser:resCtx.hasUser
                     });
                     resCtx.header = Object.assign(resCtx.header,{
@@ -37,14 +37,24 @@ module.exports = (ctx) => {
 					});
                     resolve();
                 } else {
-                    //重定向
-                    Object.assign(resCtx.header, {
-                        Location: '/'
-                    })
-                    resCtx.statusCode = 302;
-                    resCtx.statusMsg = 'redirect'
-                    resCtx.body = ''
-                    resolve();
+                    //不需要ejs渲染
+                    if(market[pathname]){
+                        let htmlPath = path.resolve(process.cwd(),'./public'+market[pathname])
+                        fs.readFile(htmlPath,(error,data)=>{
+                            if (error) resCtx.body = `NOT FOUND${error.stack}`;
+                            resCtx.body = data;
+                            resolve()
+                        })
+                    } else{
+                        Object.assign(resCtx.header, {
+                            Location: '/'
+                        })
+                        resCtx.statusCode = 302;
+                        resCtx.statusMsg = 'redirect'
+                        resCtx.body = ''
+                        resolve();
+                    }
+                    //重定向 
                 }
             }
         }
