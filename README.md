@@ -1,4 +1,4 @@
-## 我的博客网址：[wicklin.site](wicklin.site)
+## 我的博客网址：[wicklin.site](http://wicklin.site/)
 ## 前言
 本项目是个人从零到一打造的个人博客系统项目，不依赖任何第三方框架，手写Node.js处理中间件。
 ### 项目结构
